@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Learning Summit 2026 — Travel Agenda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:#FA0F00;--red-dim:rgba(250,15,0,0.15);--red-border:rgba(250,15,0,0.32);
+  --teal:#00CBA8;--teal-dim:rgba(0,203,168,0.12);--teal-border:rgba(0,203,168,0.26);
+  --gold:#E8A020;--gold-dim:rgba(232,160,32,0.12);--gold-border:rgba(232,160,32,0.26);
+  --pink:#D4537E;--pink-dim:rgba(212,83,126,0.12);--pink-border:rgba(212,83,126,0.26);
+  --blue:#3B8FE8;--blue-dim:rgba(59,143,232,0.12);--blue-border:rgba(59,143,232,0.26);
+  --purple:#8B6FD4;--purple-dim:rgba(139,111,212,0.12);--purple-border:rgba(139,111,212,0.26);
+  --bg:#0A0E14;--surface:#111824;--card:#161E2B;--card-h:#1C2535;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.12);
+  --text:#EDF2F7;--text2:#8FA5BC;--text3:#4E6478;
+  --r-sm:8px;--r-md:12px;--r-lg:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:#000}
+.hero-img{width:100%;display:block;max-height:380px;object-fit:cover;object-position:center 20%}
+.hero-g1{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.75) 0%,rgba(10,14,20,0.25) 55%,rgba(0,0,0,0.5) 100%)}
+.hero-g2{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem 2rem 2.2rem;max-width:900px}
+.hero-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
+.hero-eye::before,.hero-eye::after{content:'';display:inline-block;width:28px;height:1.5px;background:var(--teal);opacity:0.7}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,7vw,5rem);line-height:0.95;letter-spacing:0.03em;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,0.8);margin-bottom:0.5rem}
+.hero-h1 .red{color:var(--red)}
+.hero-h1 .dim{opacity:0.5;font-size:0.6em;display:block;letter-spacing:0.08em}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.12);font-size:13px;color:rgba(255,255,255,0.5)}
+.hero-meta strong{display:block;color:#fff;font-size:14px;font-weight:600;margin-bottom:1px}
+
+/* APP BAR */
+.appbar{display:flex;align-items:center;gap:14px;padding:1.25rem 2rem;max-width:900px;margin:0 auto}
+.appbar-icon{width:46px;height:46px;flex-shrink:0}
+.appbar-name{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:0.06em;color:var(--text);line-height:1}
+.appbar-name span{color:var(--red)}
+.appbar-sub{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:0.05em;margin-top:2px}
+
+/* MAIN */
+.main{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem}
+
+/* TRAVELERS */
+.travelers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem}
+.traveler-card{background:var(--card);border:1px solid var(--border-s);border-radius:var(--r-lg);padding:1rem 1.2rem;display:flex;align-items:flex-start;gap:12px}
+.t-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:0.05em;flex-shrink:0}
+.t-avatar.bryan{background:var(--red-dim);border:1px solid var(--red-border);color:#FF8070}
+.t-avatar.astrid{background:var(--purple-dim);border:1px solid var(--purple-border);color:#C0A8FF}
+.t-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.t-role{font-size:11px;color:var(--text3);margin-bottom:6px}
+.t-detail{font-size:11px;color:var(--text2);line-height:1.7}
+.t-detail span{color:var(--text3);margin-right:4px}
+.t-locator{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;margin-top:4px}
+.bryan .t-locator{background:var(--red-dim);color:#FF8070;border:1px solid var(--red-border)}
+.astrid .t-locator{background:var(--purple-dim);color:#C0A8FF;border:1px solid var(--purple-border)}
+
+/* BOOKING STRIP */
+.booking-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:1.5rem}
+.booking-cell{background:var(--card);border:1px solid var(--border-s);border-radius:var(--r-md);padding:0.7rem 1rem}
+.b-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
+.b-val{font-size:13px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.b-val.ac{color:var(--teal)}
+.b-sub{font-size:10px;color:var(--text3);margin-top:2px}
+
+/* HOTEL */
+.hotel-card{display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1px solid var(--teal-border);border-radius:var(--r-lg);padding:1.1rem 1.25rem;margin-bottom:1.25rem}
+.hotel-icon{width:42px;height:42px;border-radius:var(--r-sm);background:var(--teal-dim);border:1px solid var(--teal-border);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.hotel-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.hotel-detail{font-size:12px;color:var(--text3);line-height:1.7}
+.hotel-detail a{color:var(--teal);text-decoration:none}
+.hotel-confirm{margin-left:auto;text-align:right;flex-shrink:0}
+.hotel-confirm .lbl{font-size:10px;color:var(--text3);font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.hotel-confirm .val{font-size:13px;color:var(--teal);font-weight:600;margin-top:2px}
+.hotel-confirm .price{font-size:12px;color:var(--text2);margin-top:3px}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:0.75rem 1.1rem;margin-bottom:2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r-md)}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);font-weight:500}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* DAY */
+.day-block{margin-bottom:2.25rem}
+.day-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0.8rem 1.25rem;background:var(--surface);border:1px solid var(--border-s);border-bottom:none;border-radius:var(--r-md) var(--r-md) 0 0;position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.day-wd{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:2px}
+.day-name{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:0.04em;color:var(--text);line-height:1.1}
+.day-badge{font-size:10px;font-weight:600;padding:4px 11px;border-radius:99px;white-space:nowrap;letter-spacing:0.03em;flex-shrink:0}
+.b-travel{background:var(--blue-dim);color:#80BFFF;border:1px solid var(--blue-border)}
+.b-cg{background:var(--gold-dim);color:#FFB840;border:1px solid var(--gold-border)}
+.b-cs{background:var(--pink-dim);color:#F09AB8;border:1px solid var(--pink-border)}
+.b-return{background:var(--teal-dim);color:#40D4B8;border:1px solid var(--teal-border)}
+
+/* TIMELINE */
+.timeline{background:var(--card);border:1px solid var(--border);border-radius:0 0 var(--r-md) var(--r-md);overflow:hidden}
+.sec-div{padding:5px 1.25rem;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.ev{display:flex;gap:12px;align-items:flex-start;padding:0.7rem 1.25rem 0.7rem 1rem;border-bottom:1px solid var(--border);transition:background 0.12s;position:relative}
+.ev:last-child{border-bottom:none}
+.ev:hover{background:var(--card-h)}
+.ev-stripe{position:absolute;left:0;top:0;bottom:0;width:3px}
+.ev-time{font-size:11px;color:var(--text3);min-width:94px;padding-top:2px;font-variant-numeric:tabular-nums;flex-shrink:0;font-weight:500;line-height:1.5}
+.ev-time .seat{display:block;font-size:10px;color:var(--text3);margin-top:1px;font-style:italic}
+.ev-icon{font-size:15px;flex-shrink:0;padding-top:2px;width:18px;text-align:center}
+.ev-body{flex:1;min-width:0}
+.ev-title{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
+.ev-sub{font-size:11px;color:var(--text3);margin-top:2px;line-height:1.5}
+.ev-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;letter-spacing:0.02em}
+.tag-hotel{background:var(--blue-dim);color:#80BFFF;border:1px solid var(--blue-border)}
+.tag-walk{background:var(--teal-dim);color:#40D4B8;border:1px solid var(--teal-border)}
+.tag-tip{background:var(--gold-dim);color:#FFB840;border:1px solid var(--gold-border)}
+.tag-warn{background:rgba(250,15,0,0.13);color:#FF7060;border:1px solid rgba(250,15,0,0.3)}
+.tag-show{background:var(--pink-dim);color:#F09AB8;border:1px solid var(--pink-border)}
+.tag-res{background:var(--gold-dim);color:#FFB840;border:1px solid var(--gold-border)}
+.tag-link{background:var(--red-dim);color:#FF7060;border:1px solid var(--red-border)}
+.tag-conf{background:rgba(130,100,200,0.13);color:#C0A0FF;border:1px solid rgba(130,100,200,0.3)}
+.tag-bryan{background:var(--red-dim);color:#FF8070;border:1px solid var(--red-border)}
+.tag-astrid{background:var(--purple-dim);color:#C0A8FF;border:1px solid var(--purple-border)}
+.tag-both{background:rgba(0,203,168,0.1);color:#40D4B8;border:1px solid var(--teal-border)}
+
+/* event type colors */
+.t-flight .ev-stripe{background:var(--blue)}.t-flight .ev-icon{color:#80BFFF}
+.t-hotel .ev-stripe{background:#2266AA}.t-hotel .ev-icon{color:#80BFFF}
+.t-keynote .ev-stripe{background:var(--red)}.t-keynote .ev-icon{color:#FF6655}.t-keynote .ev-title{color:#FF9080}
+.t-session .ev-stripe{background:rgba(200,80,60,0.5)}.t-session .ev-icon{color:#FF7060}
+.t-meal .ev-stripe{background:var(--teal)}.t-meal .ev-icon{color:var(--teal)}
+.t-social .ev-stripe{background:#C05030}.t-social .ev-icon{color:#F0997B}
+.t-gordon .ev-stripe{background:var(--gold)}.t-gordon .ev-icon{color:var(--gold)}.t-gordon .ev-title{color:#FFD080}
+.t-rupaul .ev-stripe{background:var(--pink)}.t-rupaul .ev-icon{color:#F09AB8}.t-rupaul .ev-title{color:#F8B0CC}
+.t-focus .ev-icon{color:var(--text3)}
+.t-warn .ev-stripe{background:var(--red)}.t-warn .ev-icon{color:#FF7060}.t-warn .ev-title{color:#FF9080}
+
+/* TRAVELER PILLS inline */
+.who{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:1px 7px;border-radius:99px;vertical-align:middle;margin-left:4px}
+.who.b{background:var(--red-dim);color:#FF8070;border:1px solid var(--red-border)}
+.who.a{background:var(--purple-dim);color:#C0A8FF;border:1px solid var(--purple-border)}
+.who.both{background:var(--teal-dim);color:#40D4B8;border:1px solid var(--teal-border)}
+
+footer{max-width:900px;margin:0 auto;padding:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:14px;font-size:11px;color:var(--text3)}
+footer a{color:var(--teal);text-decoration:none}
+.footer-icon{width:28px;height:28px;flex-shrink:0}
+
+@media(max-width:620px){
+  .travelers{grid-template-columns:1fr}
+  .hero-h1{font-size:2.6rem}
+  .hero-content{padding:1.5rem 1.25rem 1.8rem}
+  .appbar,.main{padding-left:1rem;padding-right:1rem}
+  .ev-time{min-width:76px;font-size:10px}
+  .day-header{position:relative}
+  .hotel-card{flex-wrap:wrap}
+  .hotel-confirm{margin-left:0;text-align:left;margin-top:6px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="hero-img" src="banner.png" alt="Adobe Learning Summit 2026 — Bellagio, Las Vegas">
+  <div class="hero-g1"></div><div class="hero-g2"></div>
+  <div class="hero-content">
+    <div class="hero-eye">Travel & Conference Agenda</div>
+    <h1 class="hero-h1">
+      Las Vegas · <span class="red">June 23–26</span>
+      <span class="dim">Adobe Learning Summit 2026</span>
+    </h1>
+    <div class="hero-meta">
+      <div><strong>Liberty Business · Puerto Rico</strong>Knowledge & Training Team</div>
+      <div><strong>Bellagio Hotel & Casino</strong>Conference venue · Pacific Time</div>
+      <div><strong>Planet Hollywood</strong>3 nights · Las Vegas Strip</div>
+    </div>
+  </div>
+</div>
+
+<div class="appbar">
+  <svg class="appbar-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="46" height="46" rx="11" fill="#111824"/>
+    <defs>
+      <radialGradient id="abg" cx="40%" cy="20%" r="70%"><stop offset="0%" stop-color="#00CBA8" stop-opacity="0.45"/><stop offset="100%" stop-color="#0A0E14" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ared" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#FF4430"/><stop offset="100%" stop-color="#A80A00"/></linearGradient>
+    </defs>
+    <rect width="46" height="46" rx="11" fill="url(#abg)" opacity="0.5"/>
+    <path d="M4 20 Q14 8 26 16 Q34 22 44 14" stroke="#00CBA8" stroke-width="1.2" stroke-opacity="0.55" fill="none" stroke-linecap="round"/>
+    <path d="M2 24 Q16 12 30 20 Q38 25 46 18" stroke="#00A888" stroke-width="0.8" stroke-opacity="0.35" fill="none" stroke-linecap="round"/>
+    <path d="M23 7 L34 37 H29.2 L26.6 30.5 H19.4 L16.8 37 H12 Z" fill="url(#ared)"/>
+    <path d="M23 13 L26.8 28 H19.2 Z" fill="#111824" opacity="0.9"/>
+    <circle cx="36" cy="11" r="1.3" fill="#00CBA8" opacity="0.9"/>
+    <circle cx="40" cy="16" r="0.8" fill="#00CBA8" opacity="0.55"/>
+    <circle cx="33" cy="7"  r="0.7" fill="#fff" opacity="0.6"/>
+    <circle cx="11" cy="10" r="0.8" fill="#00CBA8" opacity="0.45"/>
+  </svg>
+  <div>
+    <div class="appbar-name">Adobe <span>Summit</span> 2026</div>
+    <div class="appbar-sub">Liberty Business · Knowledge & Training Team · Las Vegas</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- TRAVELERS -->
+  <div class="travelers">
+    <div class="traveler-card">
+      <div class="t-avatar bryan">BO</div>
+      <div style="flex:1;min-width:0">
+        <div class="t-name">Bryan Olivari</div>
+        <div class="t-role">CX Manager · Knowledge & Training</div>
+        <div class="t-detail">
+          <span>Locator</span>LQPVKN · PNR ABYQPZ (WN)<br>
+          <span>Ticket</span>WN 7447259102<br>
+          <span>FF#</span>SW 20929243204<br>
+          <span>Hotel conf.</span>26151SG020705 · $478.29<br>
+          <span>Seats</span>25C / 23A / 24C / 23D
+        </div>
+        <span class="t-locator bryan">Condado Travel / AmEx GBT</span>
+      </div>
+    </div>
+    <div class="traveler-card">
+      <div class="t-avatar astrid">AF</div>
+      <div style="flex:1;min-width:0">
+        <div class="t-name">Astrid Fuentes</div>
+        <div class="t-role">Supervisor · Knowledge & Training</div>
+        <div class="t-detail">
+          <span>Locator</span>FNODNG (Concur)<br>
+          <span>Flights</span>Same itinerary · WN 3718 / 975 / 2204 / 1103<br>
+          <span>Fare</span>USD 761.00 total (incl. taxes)<br>
+          <span>Cabin</span>Economy Basic (outbound) · Choice (return)<br>
+          <span>Seats</span>Pending assignment
+        </div>
+        <span class="t-locator astrid">Concur Travel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING STRIP -->
+  <div class="booking-strip">
+    <div class="booking-cell"><div class="b-label">Bryan record</div><div class="b-val ac">LQPVKN</div><div class="b-sub">Condado / AmEx GBT</div></div>
+    <div class="booking-cell"><div class="b-label">Astrid record</div><div class="b-val" style="color:#C0A8FF">FNODNG</div><div class="b-sub">Concur Travel</div></div>
+    <div class="booking-cell"><div class="b-label">Airline PNR (WN)</div><div class="b-val ac">ABYQPZ</div><div class="b-sub">Bryan</div></div>
+    <div class="booking-cell"><div class="b-label">Hotel conf.</div><div class="b-val" style="font-size:12px">26151SG020705</div><div class="b-sub">Bryan · $478.29</div></div>
+    <div class="booking-cell"><div class="b-label">Bryan flights</div><div class="b-val">$852.30</div><div class="b-sub">incl. taxes & fees</div></div>
+    <div class="booking-cell"><div class="b-label">Astrid flights</div><div class="b-val">$761.00</div><div class="b-sub">incl. taxes & fees</div></div>
+  </div>
+
+  <!-- HOTEL -->
+  <div class="hotel-card">
+    <div class="hotel-icon">🏨</div>
+    <div style="flex:1;min-width:0">
+      <div class="hotel-name">Planet Hollywood Resort & Casino (Caesars / Harras)</div>
+      <div class="hotel-detail">
+        3667 Las Vegas Blvd S, Las Vegas NV 89109 · <a href="tel:17027855555">+1 702-785-5555</a><br>
+        Ultra Hip Room · King · Attraction View · Check-in Jun 23 → Check-out Jun 26 · 3 nights<br>
+        Cancel 48 hrs prior to avoid 1-night penalty · Room guaranteed
+      </div>
+    </div>
+    <div class="hotel-confirm">
+      <div class="lbl">Confirmation</div>
+      <div class="val">26151SG020705</div>
+      <div class="price">$478.29 total</div>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#3B8FE8"></div>Flight</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#FA0F00"></div>Keynote</div>
+    <div class="leg-item"><div class="leg-dot" style="background:rgba(200,80,60,0.7)"></div>Session</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#00CBA8"></div>Meal</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#E8A020"></div>Gordon Ramsay dinner</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#D4537E"></div>RuPaul's Drag Race Live!</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C05030"></div>Networking</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#3A4E60"></div>Transit / free time</div>
+  </div>
+
+  <!-- ══════ JUNE 23 ══════ -->
+  <div class="day-block">
+    <div class="day-header">
+      <div><div class="day-wd">Tuesday · June 23, 2026</div><div class="day-name">Travel Day — San Juan → Las Vegas</div></div>
+      <span class="day-badge b-travel">Travel</span>
+    </div>
+    <div class="timeline">
+
+      <div class="ev t-flight">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">10:00 AM AST<span class="seat">Bryan: Seat 25C · Term. B<br>Astrid: Seat TBD · Term. B</span></div>
+        <div class="ev-icon">✈</div>
+        <div class="ev-body">
+          <div class="ev-title">Southwest WN 3718 — San Juan (SJU) → Baltimore (BWI)<span class="who both">Both</span></div>
+          <div class="ev-sub">Departs 10:00 AM · Arrives 2:10 PM EST · 4h 10m · Boeing 737 MAX · Economy</div>
+          <div class="ev-tags"><span class="tag tag-conf">Non-stop</span><span class="tag tag-tip">Flights close 1 hr before departure</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">2:10 – 3:45 PM EST</div>
+        <div class="ev-icon">⏱</div>
+        <div class="ev-body">
+          <div class="ev-title">Layover — Baltimore/Washington International (BWI)</div>
+          <div class="ev-sub">~1 hr 35 min connection · grab food / water for the long leg ahead</div>
+        </div>
+      </div>
+
+      <div class="ev t-flight">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">3:45 PM EST<span class="seat">Bryan: Seat 23A<br>Astrid: Seat TBD · Term. 1</span></div>
+        <div class="ev-icon">✈</div>
+        <div class="ev-body">
+          <div class="ev-title">Southwest WN 0975 — Baltimore (BWI) → Las Vegas (LAS)<span class="who both">Both</span></div>
+          <div class="ev-sub">Departs 3:45 PM · Arrives 5:45 PM PT · 5h 0m · Boeing 737 MAX · Economy · Arrival Terminal 1</div>
+          <div class="ev-tags"><span class="tag tag-conf">Non-stop</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-flight">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~5:45 PM PT</div>
+        <div class="ev-icon">🛬</div>
+        <div class="ev-body">
+          <div class="ev-title">Arrive Las Vegas (LAS) · Terminal 1</div>
+          <div class="ev-sub">Allow ~20–30 min for baggage · ~20 min rideshare to Strip</div>
+          <div class="ev-tags">
+            <span class="tag tag-tip">Budget ~50 min from landing to hotel</span>
+            <span class="tag tag-tip">Bryan: carry-on only · Astrid: checked bag $45 if needed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev t-hotel">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~7:00 PM PT</div>
+        <div class="ev-icon">🏨</div>
+        <div class="ev-body">
+          <div class="ev-title">Check in — Planet Hollywood Resort & Casino<span class="who b">Bryan</span></div>
+          <div class="ev-sub">3667 Las Vegas Blvd S · Conf. 26151SG020705 · Ultra Hip Room King · +1 702-785-5555</div>
+          <div class="ev-tags"><span class="tag tag-hotel">3 nights · Jun 23–26</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">Evening</div>
+        <div class="ev-icon">🌙</div>
+        <div class="ev-body">
+          <div class="ev-title">Settle in · explore the Strip · rest</div>
+          <div class="ev-sub">Gordon Ramsay Burger is inside Planet Hollywood — open until 1 AM</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════ JUNE 24 ══════ -->
+  <div class="day-block">
+    <div class="day-header">
+      <div><div class="day-wd">Wednesday · June 24, 2026</div><div class="day-name">Conference Day 1 + Gordon Ramsay Hell's Kitchen</div></div>
+      <span class="day-badge b-cg">Conf + dinner</span>
+    </div>
+    <div class="timeline">
+
+      <div class="ev t-meal">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">7:30 – 9:00 AM</div>
+        <div class="ev-icon">☕</div>
+        <div class="ev-body">
+          <div class="ev-title">Breakfast — Bellagio Ballroom 567<span class="who both">Both</span></div>
+          <div class="ev-sub">~8 min walk from Planet Hollywood · head out by 7:20 AM</div>
+        </div>
+      </div>
+
+      <div class="ev t-keynote">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">9:00 – 10:00 AM</div>
+        <div class="ev-icon">🎤</div>
+        <div class="ev-body">
+          <div class="ev-title">[Keynote] Storytelling for business</div>
+          <div class="ev-sub">Bellagio Ballroom 2</div>
+        </div>
+      </div>
+
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">10:00 – 11:15 AM</div><div class="ev-icon">✦</div><div class="ev-body"><div class="ev-title">What's new with Adobe Digital Learning Solutions</div><div class="ev-sub">Bellagio Ballroom 2</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">11:45 AM – 12:45 PM</div><div class="ev-icon">💻</div><div class="ev-body"><div class="ev-title">What's new in Adobe Captivate: building smarter learning experiences</div><div class="ev-sub">Bellagio Ballroom 1</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">1:45 – 2:15 PM</div><div class="ev-icon">🤖</div><div class="ev-body"><div class="ev-title">Unlock exponential productivity for instructors with AI-first virtual classrooms</div><div class="ev-sub">Bellagio Ballroom 34</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">2:15 – 3:00 PM</div><div class="ev-icon">📝</div><div class="ev-body"><div class="ev-title">Say it. See it. Publish it — AI in Adobe Learning Manager Content Composer</div><div class="ev-sub">Bellagio Ballroom 34</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">3:15 – 4:00 PM</div><div class="ev-icon">👥</div><div class="ev-body"><div class="ev-title">Deliver one-on-one coaching for every learner at scale using AI roleplays</div><div class="ev-sub">Renoir 1</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">4:30 – 5:30 PM</div><div class="ev-icon">🔧</div><div class="ev-body"><div class="ev-title">[Workshop] Experience Builder — practice stunning learning experiences live!</div><div class="ev-sub">Renoir 2</div></div></div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">6:00 – 8:00 PM</div>
+        <div class="ev-icon">🥂</div>
+        <div class="ev-body">
+          <div class="ev-title">Networking reception — Bellagio Monet Patio<span class="who both">Both</span></div>
+          <div class="ev-sub">Enjoy and connect · head to Gordon Ramsay when done</div>
+        </div>
+      </div>
+
+      <div class="sec-div">Evening · Gordon Ramsay Hell's Kitchen</div>
+
+      <div class="ev t-gordon">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">8:00 PM</div>
+        <div class="ev-icon">👨‍🍳</div>
+        <div class="ev-body">
+          <div class="ev-title">Gordon Ramsay Hell's Kitchen — dinner<span class="who both">Both</span></div>
+          <div class="ev-sub">3570 Las Vegas Blvd S, Caesars Palace · +1 702-731-7373 · Open until 11:30 PM</div>
+          <div class="ev-tags">
+            <span class="tag tag-res">Reservation: Wed June 24 · 8:00 PM</span>
+            <span class="tag tag-walk">~10 min walk from Bellagio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div><div class="ev-time">~10:00 PM</div><div class="ev-icon">🌙</div>
+        <div class="ev-body"><div class="ev-title">Walk back to Planet Hollywood · rest up for day 2</div><div class="ev-sub">~5 min walk south on the Strip from Caesars</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════ JUNE 25 ══════ -->
+  <div class="day-block">
+    <div class="day-header">
+      <div><div class="day-wd">Thursday · June 25, 2026</div><div class="day-name">Conference Day 2 + RuPaul's Drag Race Live!</div></div>
+      <span class="day-badge b-cs">Conf + show</span>
+    </div>
+    <div class="timeline">
+
+      <div class="ev t-meal"><div class="ev-stripe"></div><div class="ev-time">7:30 – 8:30 AM</div><div class="ev-icon">☕</div><div class="ev-body"><div class="ev-title">Breakfast — Bellagio Ballroom 567<span class="who both">Both</span></div><div class="ev-sub">~8 min walk from Planet Hollywood</div></div></div>
+      <div class="ev t-keynote"><div class="ev-stripe"></div><div class="ev-time">8:30 – 9:15 AM</div><div class="ev-icon">🎤</div><div class="ev-body"><div class="ev-title">Keynote 2</div><div class="ev-sub">Bellagio Ballroom 2</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">9:15 – 10:00 AM</div><div class="ev-icon">📈</div><div class="ev-body"><div class="ev-title">The next growth lever is learning — enabling an ecosystem to learn, adapt, and grow</div><div class="ev-sub">Bellagio Ballroom 2</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">10:30 – 11:30 AM</div><div class="ev-icon">💡</div><div class="ev-body"><div class="ev-title">You have the idea — now what? Turning concepts into learning experiences with AI and Adobe</div><div class="ev-sub">Bellagio Ballroom 1</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">11:45 AM – 12:30 PM</div><div class="ev-icon">🤖</div><div class="ev-body"><div class="ev-title">Your LMS shouldn't need you — meet the agents that run it for you</div><div class="ev-sub">Renoir 2</div></div></div>
+      <div class="ev t-meal"><div class="ev-stripe"></div><div class="ev-time">12:30 – 1:30 PM</div><div class="ev-icon">🍽</div><div class="ev-body"><div class="ev-title">Lunch — Bellagio Ballroom 567<span class="who both">Both</span></div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">1:30 – 2:30 PM</div><div class="ev-icon">🗺</div><div class="ev-body"><div class="ev-title">Taming the chaos! The roadmap to elegant architecture</div><div class="ev-sub">Bellagio Ballroom 1</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">2:45 – 3:30 PM</div><div class="ev-icon">✦</div><div class="ev-body"><div class="ev-title">How Adobe is transforming end-to-end learning from creation to delivery with AI</div><div class="ev-sub">Renoir 2</div></div></div>
+      <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">4:00 – 4:45 PM</div><div class="ev-icon">📝</div><div class="ev-body"><div class="ev-title">Say it. See it. Publish it — AI in Adobe Learning Manager Content Composer (repeat)</div><div class="ev-sub">Bellagio Ballroom 34</div></div></div>
+
+      <div class="sec-div">Evening · RuPaul's Drag Race Live!</div>
+
+      <div class="ev t-focus"><div class="ev-stripe"></div><div class="ev-time">4:45 – 6:30 PM</div><div class="ev-icon">🚶</div><div class="ev-body"><div class="ev-title">Walk back to Planet Hollywood · freshen up<span class="who both">Both</span></div><div class="ev-sub">~8 min walk from Bellagio</div></div></div>
+
+      <div class="ev t-meal"><div class="ev-stripe"></div><div class="ev-time">6:30 – 8:30 PM</div><div class="ev-icon">🍽</div><div class="ev-body"><div class="ev-title">Dinner — your pick on the Strip<span class="who both">Both</span></div><div class="ev-sub">Gordon Ramsay Burger at Planet Hollywood (open until 1 AM) or anywhere nearby · wrap up by 9 PM</div></div></div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div><div class="ev-time">9:10 PM</div><div class="ev-icon">🚶</div>
+        <div class="ev-body">
+          <div class="ev-title">Walk north to Flamingo Showroom<span class="who both">Both</span></div>
+          <div class="ev-sub">3555 Las Vegas Blvd S · arrive a few minutes early for seating</div>
+          <div class="ev-tags"><span class="tag tag-walk">~5 min walk from Planet Hollywood</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-rupaul">
+        <div class="ev-stripe"></div><div class="ev-time">9:30 – 10:45 PM</div><div class="ev-icon">⭐</div>
+        <div class="ev-body">
+          <div class="ev-title">RuPaul's Drag Race Live! — Flamingo Showroom<span class="who both">Both</span></div>
+          <div class="ev-sub">75 min show · Flamingo Las Vegas · +1 702-733-3111</div>
+          <div class="ev-tags"><span class="tag tag-show">Thu–Mon · 9:30 PM</span><span class="tag tag-link">ticketmaster.com/dragracevegas</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-warn">
+        <div class="ev-stripe"></div><div class="ev-time">~11:00 PM</div><div class="ev-icon">⚠</div>
+        <div class="ev-body">
+          <div class="ev-title">Return to hotel · pack bags tonight — very early flight tomorrow</div>
+          <div class="ev-sub">Flight departs 6:50 AM · must be at airport by 5:50 AM · wake up by 4:45 AM</div>
+          <div class="ev-tags"><span class="tag tag-warn">Book rideshare tonight for 5:00 AM pickup</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════ JUNE 26 ══════ -->
+  <div class="day-block">
+    <div class="day-header">
+      <div><div class="day-wd">Friday · June 26, 2026</div><div class="day-name">Return Travel — Las Vegas → San Juan</div></div>
+      <span class="day-badge b-return">Return day</span>
+    </div>
+    <div class="timeline">
+
+      <div class="ev t-warn">
+        <div class="ev-stripe"></div><div class="ev-time">4:45 AM PT</div><div class="ev-icon">⏰</div>
+        <div class="ev-body">
+          <div class="ev-title">Wake up · check out · rideshare to Harry Reid Airport (LAS)<span class="who both">Both</span></div>
+          <div class="ev-sub">~20 min drive · Terminal 1 · allow time for security</div>
+          <div class="ev-tags"><span class="tag tag-warn">Extremely early — 6:50 AM flight!</span><span class="tag tag-tip">Pre-book rideshare the night before · ~$20–25</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-flight">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">6:50 AM PT<span class="seat">Bryan: Seat 24C · Term. 1<br>Astrid: Seat TBD · Term. 1</span></div>
+        <div class="ev-icon">✈</div>
+        <div class="ev-body">
+          <div class="ev-title">Southwest WN 2204 — Las Vegas (LAS) → Baltimore (BWI)<span class="who both">Both</span></div>
+          <div class="ev-sub">Departs 6:50 AM · Arrives 2:25 PM EST · 4h 35m · Boeing 737 MAX · Economy Choice (Astrid) / Economy (Bryan)</div>
+          <div class="ev-tags"><span class="tag tag-conf">Non-stop</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div><div class="ev-time">2:25 – 5:05 PM EST</div><div class="ev-icon">⏱</div>
+        <div class="ev-body">
+          <div class="ev-title">Layover — Baltimore/Washington International (BWI)</div>
+          <div class="ev-sub">~2 hr 40 min connection · grab food · decompress · review notes</div>
+        </div>
+      </div>
+
+      <div class="ev t-flight">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">5:05 PM EST<span class="seat">Bryan: Seat 23D<br>Astrid: Seat TBD</span></div>
+        <div class="ev-icon">✈</div>
+        <div class="ev-body">
+          <div class="ev-title">Southwest WN 1103 — Baltimore (BWI) → San Juan (SJU)<span class="who both">Both</span></div>
+          <div class="ev-sub">Departs 5:05 PM · Arrives 9:15 PM AST · 4h 10m · Economy · Arrival Terminal B SJU</div>
+          <div class="ev-tags"><span class="tag tag-conf">Non-stop</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-hotel">
+        <div class="ev-stripe"></div><div class="ev-time">9:15 PM AST</div><div class="ev-icon">🏠</div>
+        <div class="ev-body">
+          <div class="ev-title">Arrive San Juan (SJU) · Terminal B — welcome home!<span class="who both">Both</span></div>
+          <div class="ev-sub">Puerto Rico · end of trip</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <svg class="footer-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="28" height="28" rx="7" fill="#111824"/>
+    <path d="M14 4 L20.5 22 H17 L15.4 18 H12.6 L11 22 H7.5 Z" fill="#FA0F00"/>
+    <path d="M14 8.5 L15.8 16 H12.2 Z" fill="#111824" opacity="0.9"/>
+  </svg>
+  <span>
+    Adobe Learning Summit 2026 · Bryan Olivari &amp; Astrid Fuentes · Liberty Business Puerto Rico ·
+    <a href="https://condadotravel.com">Condado Travel / AmEx GBT</a> · Records: LQPVKN (Bryan) · FNODNG (Astrid)
+  </span>
+</footer>
+
+</body>
+</html>
