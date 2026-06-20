@@ -322,6 +322,71 @@ footer a{color:var(--teal);text-decoration:none}
     background:var(--lb-blue);
   }
 }
+
+/* ── PAST EVENT STYLES ─────────────────────────────── */
+.ev.ev-past {
+  opacity: 0.48;
+  background: #F0EEE8 !important;
+}
+.ev.ev-past .ev-title {
+  text-decoration: line-through;
+  color: #9AA0A8 !important;
+  text-decoration-color: #B0B6BC;
+  text-decoration-thickness: 1.5px;
+}
+.ev.ev-past .ev-time {
+  color: #B0B6BC !important;
+}
+.ev.ev-past .ev-sub {
+  color: #C0C5CA !important;
+}
+.ev.ev-past .ev-stripe {
+  background: #C8CACF !important;
+}
+.ev.ev-past .ev-icon {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+.ev.ev-past .tag {
+  opacity: 0.5;
+  filter: grayscale(0.6);
+}
+
+/* Currently happening — subtle highlight */
+.ev.ev-now {
+  background: #FFFBF0 !important;
+  border-left: 3px solid var(--lb-orange) !important;
+}
+.ev.ev-now .ev-title::after {
+  content: ' · NOW';
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--lb-orange);
+  letter-spacing: 0.08em;
+  margin-left: 6px;
+}
+/* Day header past */
+.day-header.day-past {
+  background: #8A9299 !important;
+  border-color: #8A9299 !important;
+}
+/* Day header today */
+.day-header.day-today {
+  background: var(--lb-blue) !important;
+  position: relative;
+}
+.day-header.day-today::after {
+  content: 'TODAY';
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--lb-orange);
+  background: white;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 10px;
+  letter-spacing: 0.08em;
+}
+
 </style>
 </head>
 <body>
@@ -1690,6 +1755,117 @@ function switchTab(idx) {
   document.querySelectorAll('.tab-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
   window.scrollTo({top: document.getElementById('tab-nav').offsetTop - 8, behavior: 'smooth'});
 }
+
+// ── PAST EVENT AUTO-STRIKE ────────────────────────────────────────────
+(function() {
+  // All events with their datetime info
+  // Times are in PT (Pacific Time, UTC-7 during June)
+  // Conference: Jun 24-25 in Las Vegas (Pacific Time)
+  // Travel: Jun 23 departure AST, Jun 26 departure PT
+
+  // Map of date + start-time for each event (Pacific Time for conference,
+  // approximate local time for travel events)
+  // Format: 'YYYY-MM-DDTHH:MM' all in PT equivalent for comparison
+  const eventTimes = [
+    // Jun 23 travel (departures in AST = PT+4, so 10am AST = 6am PT)
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(1)',  dt: '2026-06-23T06:00' }, // SW3718 dep SJU 10am AST
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(2)',  dt: '2026-06-23T10:10' }, // BWI layover 2:10pm EST=11:10 PT
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(3)',  dt: '2026-06-23T11:45' }, // SW975 dep BWI 3:45pm EST
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(4)',  dt: '2026-06-23T17:45' }, // Arrive LAS 5:45pm PT
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(5)',  dt: '2026-06-23T19:00' }, // Hotel check-in ~7pm PT
+    { selector: '.day-block:nth-of-type(1) .ev:nth-child(6)',  dt: '2026-06-23T20:00' }, // Evening
+
+    // Jun 24 conference day 1 (all PT)
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(1)',  dt: '2026-06-24T07:30' }, // Breakfast
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(2)',  dt: '2026-06-24T09:00' }, // Keynote
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(3)',  dt: '2026-06-24T10:00' }, // Adobe DLS
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(4)',  dt: '2026-06-24T11:45' }, // Captivate
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(5)',  dt: '2026-06-24T12:30' }, // Studion lunch
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(6)',  dt: '2026-06-24T13:30' }, // Walk to ballroom
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(7)',  dt: '2026-06-24T13:45' }, // AI classrooms
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(8)',  dt: '2026-06-24T14:15' }, // Content Composer
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(9)',  dt: '2026-06-24T15:15' }, // AI roleplays
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(10)', dt: '2026-06-24T16:30' }, // Workshop
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(11)', dt: '2026-06-24T18:00' }, // Networking
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(12)', dt: '2026-06-24T20:00' }, // Gordon Ramsay
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(13)', dt: '2026-06-24T22:00' }, // Shopping M&M
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(14)', dt: '2026-06-24T22:15' }, // Sugar Factory
+    { selector: '.day-block:nth-of-type(2) .ev:nth-child(15)', dt: '2026-06-24T22:30' }, // Walk back
+
+    // Jun 25 conference day 2 (all PT)
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(1)',  dt: '2026-06-25T07:30' }, // Breakfast
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(2)',  dt: '2026-06-25T08:30' }, // Keynote 2
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(3)',  dt: '2026-06-25T09:15' }, // Growth lever
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(4)',  dt: '2026-06-25T10:30' }, // Idea session
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(5)',  dt: '2026-06-25T11:45' }, // LMS agents
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(6)',  dt: '2026-06-25T12:30' }, // Lunch
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(7)',  dt: '2026-06-25T13:30' }, // Architecture
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(8)',  dt: '2026-06-25T14:45' }, // Adobe end-to-end
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(9)',  dt: '2026-06-25T16:00' }, // Content Composer repeat
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(10)', dt: '2026-06-25T16:45' }, // Walk back
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(11)', dt: '2026-06-25T18:30' }, // Dinner
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(12)', dt: '2026-06-25T21:10' }, // Walk to Flamingo
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(13)', dt: '2026-06-25T21:30' }, // RuPaul
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(14)', dt: '2026-06-25T23:30' }, // CartZilla
+    { selector: '.day-block:nth-of-type(3) .ev:nth-child(15)', dt: '2026-06-26T01:00' }, // Pack bags
+
+    // Jun 26 return (PT)
+    { selector: '.day-block:nth-of-type(4) .ev:nth-child(1)',  dt: '2026-06-26T04:45' }, // Wake up
+    { selector: '.day-block:nth-of-type(4) .ev:nth-child(2)',  dt: '2026-06-26T06:50' }, // SW2204 dep LAS
+    { selector: '.day-block:nth-of-type(4) .ev:nth-child(3)',  dt: '2026-06-26T14:25' }, // BWI layover
+    { selector: '.day-block:nth-of-type(4) .ev:nth-child(4)',  dt: '2026-06-26T17:05' }, // SW1103 dep BWI (EST→PT: -3)
+    { selector: '.day-block:nth-of-type(4) .ev:nth-child(5)',  dt: '2026-06-26T21:15' }, // Arrive SJU
+  ];
+
+  // Day block dates for header coloring
+  const dayDates = [
+    { selector: '.day-block:nth-of-type(1) .day-header', date: '2026-06-23' },
+    { selector: '.day-block:nth-of-type(2) .day-header', date: '2026-06-24' },
+    { selector: '.day-block:nth-of-type(3) .day-header', date: '2026-06-25' },
+    { selector: '.day-block:nth-of-type(4) .day-header', date: '2026-06-26' },
+  ];
+
+  function markEvents() {
+    // Current time in PT (UTC-7 during June)
+    const nowUTC = new Date();
+    const nowPT = new Date(nowUTC.getTime() - (7 * 60 * 60 * 1000));
+
+    eventTimes.forEach((ev, idx) => {
+      const el = document.querySelector(ev.selector);
+      if (!el) return;
+
+      const evTime = new Date(ev.dt + ':00-07:00'); // treat all as PT
+      const nextEvTime = idx < eventTimes.length - 1
+        ? new Date(eventTimes[idx + 1].dt + ':00-07:00')
+        : new Date(ev.dt.split('T')[0] + 'T23:59:00-07:00');
+
+      el.classList.remove('ev-past', 'ev-now');
+
+      if (nowPT > nextEvTime) {
+        // Fully in the past
+        el.classList.add('ev-past');
+      } else if (nowPT >= evTime && nowPT <= nextEvTime) {
+        // Currently happening
+        el.classList.add('ev-now');
+      }
+    });
+
+    // Day header colors
+    const today = nowPT.toISOString().split('T')[0];
+    dayDates.forEach(d => {
+      const el = document.querySelector(d.selector);
+      if (!el) return;
+      el.classList.remove('day-past', 'day-today');
+      if (d.date < today) el.classList.add('day-past');
+      else if (d.date === today) el.classList.add('day-today');
+    });
+  }
+
+  // Run on load and refresh every minute
+  document.addEventListener('DOMContentLoaded', markEvents);
+  setInterval(markEvents, 60000);
+})();
+
 </script>
 
 </body></html>
