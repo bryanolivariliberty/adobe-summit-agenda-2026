@@ -157,9 +157,139 @@ footer a{color:var(--teal);text-decoration:none}
   .hotel-card{flex-wrap:wrap}
   .hotel-confirm{margin-left:0;text-align:left;margin-top:6px}
 }
+
+/* ─── TAB NAV ─── */
+.tab-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,14,20,0.96);
+  border-bottom:1px solid var(--border-s);
+  backdrop-filter:blur(12px);
+  padding:0 1.5rem;
+}
+.tab-nav-inner{display:flex;gap:0;max-width:900px;margin:0 auto}
+.tab-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:0.85rem 1.25rem;
+  background:none;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+  color:var(--text3);border-bottom:2px solid transparent;
+  transition:all 0.15s;white-space:nowrap;
+}
+.tab-btn:hover{color:var(--text2)}
+.tab-btn.active{color:var(--teal);border-bottom-color:var(--teal)}
+.tab-icon{font-size:16px}
+
+/* ─── TAB PANELS ─── */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ─── TAB HEADER ─── */
+.tab-header-block{padding:2rem 0 1.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.tab-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.tab-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:0.03em;color:var(--text);line-height:1}
+.tab-sub{font-size:13px;color:var(--text3);margin-top:0.4rem}
+
+/* ─── INFO CARDS ─── */
+.info-card{display:flex;align-items:flex-start;gap:14px;padding:1.1rem 1.25rem;border-radius:var(--r-lg);margin-bottom:1.25rem;border:1px solid}
+.info-card.teal{background:var(--teal-dim);border-color:var(--teal-border)}
+.info-card.gold{background:var(--gold-dim);border-color:var(--gold-border)}
+.info-card.red{background:var(--red-dim);border-color:var(--red-border)}
+.info-card-icon{font-size:24px;flex-shrink:0;padding-top:2px}
+.info-card-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.info-card-body{font-size:12px;color:var(--text2);line-height:1.7}
+.info-card-body strong{color:var(--text)}
+
+/* ─── SHOPPING BLOCK ─── */
+/* (uses existing ev styles) */
+
+/* ─── WORKSHOP TAB ─── */
+.ws-day{margin-bottom:2rem}
+.ws-day-header{display:flex;align-items:center;gap:10px;padding:0.65rem 1rem;background:var(--surface);border:1px solid var(--border-s);border-radius:var(--r-md);margin-bottom:0.75rem}
+.ws-day-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--red-dim);color:#FF8070;border:1px solid var(--red-border);white-space:nowrap}
+.ws-day-name{font-size:13px;font-weight:600;color:var(--text)}
+.ws-session{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:10px;overflow:hidden}
+.ws-session-header{display:flex;align-items:baseline;gap:12px;padding:0.65rem 1rem;border-bottom:1px solid var(--border)}
+.ws-session-header.red{background:var(--red-dim)}
+.ws-session-header.orange{background:rgba(230,120,20,0.1)}
+.ws-session-header.gold{background:var(--gold-dim)}
+.ws-session-header.purple{background:var(--purple-dim)}
+.ws-session-header.teal{background:var(--teal-dim)}
+.ws-session-time{font-size:11px;font-weight:600;color:var(--text3);white-space:nowrap;flex-shrink:0}
+.ws-session-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.ws-session-body{padding:0.75rem 1rem;font-size:12px;color:var(--text2);line-height:1.7}
+.ws-session-body p{margin-bottom:0.5rem}
+.ws-focus-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.ws-take-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin:10px 0 4px}
+.ws-list{padding-left:1.2rem;margin:0}
+.ws-list li{margin-bottom:3px}
+.ws-note{margin-top:10px;padding:8px 12px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:var(--r-sm);font-size:11px;color:#FFD080}
+.ws-table{width:100%;border-collapse:collapse;font-size:12px}
+.ws-table th{background:var(--surface);color:var(--text2);font-weight:600;padding:8px 12px;border:1px solid var(--border);text-align:left;font-size:11px;letter-spacing:0.04em;text-transform:uppercase}
+.ws-table td{padding:8px 12px;border:1px solid var(--border);color:var(--text2);vertical-align:top}
+.ws-table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+.ws-pri{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px}
+.ws-pri.crit{background:var(--red-dim);color:#FF8070;border:1px solid var(--red-border)}
+.ws-pri.high{background:var(--gold-dim);color:#FFB840;border:1px solid var(--gold-border)}
+.ws-pri.med{background:var(--teal-dim);color:#40D4B8;border:1px solid var(--teal-border)}
+.ws-pri.low{background:var(--border);color:var(--text3)}
+
+/* ─── OUTFIT TAB ─── */
+.outfit-section{margin-bottom:2.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
+.outfit-who-header{display:flex;align-items:center;gap:14px;padding:1rem 1.25rem}
+.bryan-header{background:linear-gradient(135deg,rgba(250,15,0,0.12) 0%,var(--card) 60%);border-bottom:1px solid var(--red-border)}
+.astrid-header{background:linear-gradient(135deg,rgba(139,111,212,0.12) 0%,var(--card) 60%);border-bottom:1px solid var(--purple-border)}
+.outfit-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.04em;flex-shrink:0;background:var(--red-dim);border:1px solid var(--red-border);color:#FF8070}
+.outfit-avatar.astrid{background:var(--purple-dim);border-color:var(--purple-border);color:#C0A8FF}
+.outfit-who-name{font-size:16px;font-weight:600;color:var(--text)}
+.outfit-who-role{font-size:12px;color:var(--text3);margin-top:2px}
+.outfit-day{padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+.outfit-day:last-of-type{border-bottom:none}
+.outfit-day-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:99px;display:inline-block;margin-bottom:10px}
+.outfit-day-label.conf{background:var(--purple-dim);color:#C0A8FF;border:1px solid var(--purple-border)}
+.outfit-day-label.travel{background:var(--blue-dim);color:#80BFFF;border:1px solid var(--blue-border)}
+.outfit-items{display:flex;flex-direction:column;gap:8px}
+.outfit-item{display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:var(--surface);border-radius:var(--r-sm);border:1px solid var(--border)}
+.outfit-item.tip{background:var(--gold-dim);border-color:var(--gold-border)}
+.outfit-emoji{font-size:18px;flex-shrink:0;padding-top:1px}
+.outfit-piece{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.outfit-detail{font-size:12px;color:var(--text3);line-height:1.5}
+.packing-list{padding:1rem 1.25rem;background:var(--surface);border-top:1px solid var(--border)}
+.packing-title{font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);margin-bottom:10px}
+.packing-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.packing-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);padding:4px 0}
+.packing-item span{color:var(--teal);flex-shrink:0}
+
+@media(max-width:560px){
+  .tab-btn .tab-label{display:none}
+  .tab-btn{padding:0.85rem 1rem}
+  .packing-grid{grid-template-columns:1fr}
+  .ws-table{font-size:11px}
+}
 </style>
 </head>
 <body>
+
+<!-- TAB NAV -->
+<div class="tab-nav" id="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" onclick="switchTab(0)">
+      <span class="tab-icon">🗓</span>
+      <span class="tab-label">Full Agenda</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab(1)">
+      <span class="tab-icon">🎓</span>
+      <span class="tab-label">Workshop Prep</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab(2)">
+      <span class="tab-icon">👔</span>
+      <span class="tab-label">Outfit Guide</span>
+    </button>
+  </div>
+</div>
+
+<!-- TAB 1: AGENDA -->
+<div class="tab-panel active" id="tab-0">
+
 
 <div class="hero">
   <img class="hero-img" src="banner.png" alt="Adobe Learning Summit 2026 — Bellagio, Las Vegas">
@@ -230,7 +360,8 @@ footer a{color:var(--teal);text-decoration:none}
           <span>Flights</span>Same itinerary · WN 3718 / 975 / 2204 / 1103<br>
           <span>Fare</span>USD 761.00 total (incl. taxes)<br>
           <span>Cabin</span>Economy Basic (outbound) · Choice (return)<br>
-          <span>Seats</span>Pending assignment
+          <span>Seats</span>Pending assignment<br>
+          <span>Hotel conf.</span>26151SG020689 · Confirmed ✓
         </div>
         <span class="t-locator astrid">Concur Travel</span>
       </div>
@@ -241,27 +372,45 @@ footer a{color:var(--teal);text-decoration:none}
   <div class="booking-strip">
     <div class="booking-cell"><div class="b-label">Bryan record</div><div class="b-val ac">LQPVKN</div><div class="b-sub">Condado / AmEx GBT</div></div>
     <div class="booking-cell"><div class="b-label">Astrid record</div><div class="b-val" style="color:#C0A8FF">FNODNG</div><div class="b-sub">Concur Travel</div></div>
+    <div class="booking-cell"><div class="b-label">Astrid hotel conf.</div><div class="b-val" style="color:#C0A8FF;font-size:12px">26151SG020689</div><div class="b-sub">Planet Hollywood · $TBD</div></div>
     <div class="booking-cell"><div class="b-label">Airline PNR (WN)</div><div class="b-val ac">ABYQPZ</div><div class="b-sub">Bryan</div></div>
     <div class="booking-cell"><div class="b-label">Hotel conf.</div><div class="b-val" style="font-size:12px">26151SG020705</div><div class="b-sub">Bryan · $478.29</div></div>
     <div class="booking-cell"><div class="b-label">Bryan flights</div><div class="b-val">$852.30</div><div class="b-sub">incl. taxes & fees</div></div>
     <div class="booking-cell"><div class="b-label">Astrid flights</div><div class="b-val">$761.00</div><div class="b-sub">incl. taxes & fees</div></div>
   </div>
 
-  <!-- HOTEL -->
+  <!-- HOTELS -->
   <div class="hotel-card">
     <div class="hotel-icon">🏨</div>
     <div style="flex:1;min-width:0">
-      <div class="hotel-name">Planet Hollywood Resort & Casino (Caesars / Harras)</div>
+      <div class="hotel-name">Planet Hollywood Resort & Casino — <span style="color:#FF8070">Bryan Olivari</span></div>
       <div class="hotel-detail">
         3667 Las Vegas Blvd S, Las Vegas NV 89109 · <a href="tel:17027855555">+1 702-785-5555</a><br>
         Ultra Hip Room · King · Attraction View · Check-in Jun 23 → Check-out Jun 26 · 3 nights<br>
-        Cancel 48 hrs prior to avoid 1-night penalty · Room guaranteed
+        Rate: $79/night (Jun 23–25) · $99/night (Jun 25–26) · Resort fee $186.90 · Room tax $34.39<br>
+        Cancel 48 hrs prior to avoid 1-night penalty · Room guaranteed · Deposit $159.43 charged Jun 10
       </div>
     </div>
     <div class="hotel-confirm">
       <div class="lbl">Confirmation</div>
       <div class="val">26151SG020705</div>
       <div class="price">$478.29 total</div>
+    </div>
+  </div>
+  <div class="hotel-card" style="border-color:var(--purple-border);margin-bottom:1.25rem">
+    <div class="hotel-icon" style="background:var(--purple-dim);border-color:var(--purple-border)">🏨</div>
+    <div style="flex:1;min-width:0">
+      <div class="hotel-name">Planet Hollywood Resort &amp; Casino — <span style="color:#C0A8FF">Astrid Fuentes</span></div>
+      <div class="hotel-detail">
+        3667 Las Vegas Blvd S, Las Vegas NV 89109 · <a href="tel:17027855555">+1 702-785-5555</a><br>
+        Ultra Hip Room · King · Attraction View · Check-in Jun 23 (3:00 PM) → Check-out Jun 26 (11:00 AM) · 3 nights<br>
+        Free cancellation until <strong style="color:#FF9060">4:00 PM UTC · June 21, 2026</strong> · Payment: Bryan card ••••9183
+      </div>
+    </div>
+    <div class="hotel-confirm">
+      <div class="lbl">Confirmation</div>
+      <div class="val" style="color:#C0A8FF">26151SG020689</div>
+      <div class="price">Status: Confirmed ✓</div>
     </div>
   </div>
 
@@ -342,13 +491,82 @@ footer a{color:var(--teal);text-decoration:none}
         </div>
       </div>
 
+      <div class="sec-div">Tuesday night options — pick what fits your energy after the long travel day</div>
+
+      <div class="ev t-meal">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~8:00 PM</div>
+        <div class="ev-icon">🍔</div>
+        <div class="ev-body">
+          <div class="ev-title">Option A — Stay in: Gordon Ramsay Burger · Planet Hollywood</div>
+          <div class="ev-sub">Inside your hotel · no walking · open until 1 AM · perfect for a tired arrival night</div>
+          <div class="ev-tags"><span class="tag tag-hotel">Inside hotel</span><span class="tag tag-tip">Easiest option after 12+ hrs of travel</span></div>
+        </div>
+      </div>
+
       <div class="ev t-focus">
         <div class="ev-stripe"></div>
-        <div class="ev-time">Evening</div>
+        <div class="ev-time">~8:30 PM</div>
+        <div class="ev-icon">🌮</div>
+        <div class="ev-body">
+          <div class="ev-title">Option B — Nacho Daddy · Miracle Mile Shops (inside Planet Hollywood)</div>
+          <div class="ev-sub">Late-night Tex-Mex nachos & margs · open until 2 AM · same building as your hotel</div>
+          <div class="ev-tags"><span class="tag tag-walk">Inside Miracle Mile Shops</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~8:30 PM</div>
+        <div class="ev-icon">🍹</div>
+        <div class="ev-body">
+          <div class="ev-title">Option C — Purple Zebra / Fat Tuesday · Planet Hollywood Strip area</div>
+          <div class="ev-sub">Self-serve daiquiri bar with 20 flavors (Purple Zebra) or frozen drinks at Fat Tuesday · steps from your hotel · great first-night Strip vibe</div>
+          <div class="ev-tags"><span class="tag tag-walk">On the Strip level</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~9:00 PM</div>
+        <div class="ev-icon">⛲</div>
+        <div class="ev-body">
+          <div class="ev-title">Option D — Bellagio Fountains show · stroll the Strip</div>
+          <div class="ev-sub">Free · shows run every 15 min (8–10 PM) then every 30 min until midnight · ~8 min walk from Planet Hollywood · iconic first-night Vegas moment</div>
+          <div class="ev-tags"><span class="tag tag-walk">~8 min walk north</span><span class="tag tag-tip">Free · no tickets needed</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~9:30 PM</div>
+        <div class="ev-icon">🎡</div>
+        <div class="ev-body">
+          <div class="ev-title">Option E — High Roller Observation Wheel · The LINQ</div>
+          <div class="ev-sub">550 ft above the Strip · 30 min rotation · 360° views of Bellagio fountains, the Sphere, and the whole Strip at night · "Happy Half Hour" pod includes a bartender · ~12 min walk from hotel</div>
+          <div class="ev-tags"><span class="tag tag-walk">~12 min walk north</span><span class="tag tag-tip">Best at night — book anytime ticket</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~9:00 PM</div>
+        <div class="ev-icon">🎰</div>
+        <div class="ev-body">
+          <div class="ev-title">Option F — Casino floor · Planet Hollywood</div>
+          <div class="ev-sub">Never closes · slots, table games, live energy · literally downstairs from your room · great low-key first night if you're tired but want the Vegas feel</div>
+          <div class="ev-tags"><span class="tag tag-hotel">Inside hotel</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">By 11:00 PM</div>
         <div class="ev-icon">🌙</div>
         <div class="ev-body">
-          <div class="ev-title">Settle in · explore the Strip · rest</div>
-          <div class="ev-sub">Gordon Ramsay Burger is inside Planet Hollywood — open until 1 AM</div>
+          <div class="ev-title">Recommended — call it early tonight</div>
+          <div class="ev-sub">Conference starts at 7:30 AM Wednesday · you'll need the energy · the Strip will be here all week</div>
+          <div class="ev-tags"><span class="tag tag-warn">7:30 AM breakfast tomorrow at Bellagio</span></div>
         </div>
       </div>
 
@@ -385,6 +603,31 @@ footer a{color:var(--teal);text-decoration:none}
 
       <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">10:00 – 11:15 AM</div><div class="ev-icon">✦</div><div class="ev-body"><div class="ev-title">What's new with Adobe Digital Learning Solutions</div><div class="ev-sub">Bellagio Ballroom 2</div></div></div>
       <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">11:45 AM – 12:45 PM</div><div class="ev-icon">💻</div><div class="ev-body"><div class="ev-title">What's new in Adobe Captivate: building smarter learning experiences</div><div class="ev-sub">Bellagio Ballroom 1</div></div></div>
+      <div class="ev" style="border-left:3px solid #E8A020;border-radius:0">
+        <div class="ev-stripe" style="background:#E8A020"></div>
+        <div class="ev-time">12:30 – 1:30 PM<span class="seat">12:30 PM PT / 3:30 PM ET</span></div>
+        <div class="ev-icon" style="color:#FFD080">🍽</div>
+        <div class="ev-body">
+          <div class="ev-title" style="color:#FFD080">Invite-Only Lunch — Customer & Partner Learning Leaders<span class="who both">Both</span></div>
+          <div class="ev-sub">Hosted by <strong style="color:#FFD080">Studion</strong> (tech services firm · customer & partner training) · Sadelle's, Bellagio Hotel · 3600 S Las Vegas Blvd<br>Topics: challenges, trends &amp; triumphs of creating learning experiences for customer &amp; partner audiences<br>Organizer: Michelle Rosen · Guests: Amanda Lacanilao · shteel@adobe.com</div>
+          <div class="ev-tags">
+            <span class="tag tag-res">Invite-only · confirmed</span>
+            <span class="tag tag-walk">Inside Bellagio — same conference venue</span>
+            <span class="tag tag-tip">12:30 PM PT = 3:30 PM ET</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">1:30 – 1:45 PM</div>
+        <div class="ev-icon">🚶</div>
+        <div class="ev-body">
+          <div class="ev-title">Walk from Sadelle's to Bellagio Ballroom 34</div>
+          <div class="ev-sub">Both are inside Bellagio · ~2 min walk to next session</div>
+        </div>
+      </div>
+
       <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">1:45 – 2:15 PM</div><div class="ev-icon">🤖</div><div class="ev-body"><div class="ev-title">Unlock exponential productivity for instructors with AI-first virtual classrooms</div><div class="ev-sub">Bellagio Ballroom 34</div></div></div>
       <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">2:15 – 3:00 PM</div><div class="ev-icon">📝</div><div class="ev-body"><div class="ev-title">Say it. See it. Publish it — AI in Adobe Learning Manager Content Composer</div><div class="ev-sub">Bellagio Ballroom 34</div></div></div>
       <div class="ev t-session"><div class="ev-stripe"></div><div class="ev-time">3:15 – 4:00 PM</div><div class="ev-icon">👥</div><div class="ev-body"><div class="ev-title">Deliver one-on-one coaching for every learner at scale using AI roleplays</div><div class="ev-sub">Renoir 1</div></div></div>
@@ -418,7 +661,91 @@ footer a{color:var(--teal);text-decoration:none}
 
       <div class="ev t-focus">
         <div class="ev-stripe"></div><div class="ev-time">~10:00 PM</div><div class="ev-icon">🌙</div>
-        <div class="ev-body"><div class="ev-title">Walk back to Planet Hollywood · rest up for day 2</div><div class="ev-sub">~5 min walk south on the Strip from Caesars</div></div>
+        <div class="ev-body"><div class="ev-title">Walk back to Planet Hollywood (or continue the night 👇)</div><div class="ev-sub">~5 min walk south on the Strip from Caesars · early night recommended — full conference day 2 tomorrow at 7:30 AM</div></div>
+      </div>
+
+
+      <div class="ev" style="border-left:3px solid #E8A020;border-radius:0">
+        <div class="ev-stripe" style="background:#E8A020"></div>
+        <div class="ev-time">~10:00 PM<span class="seat">On the walk back</span></div>
+        <div class="ev-icon" style="color:#FFD080">🍫</div>
+        <div class="ev-body">
+          <div class="ev-title" style="color:#FFD080">Shopping stop — M&M's World + Hershey's Chocolate World<span class="who both">Both</span></div>
+          <div class="ev-sub">M&M's World: 3785 S Las Vegas Blvd (4-story, custom candy wall, merch) · open until midnight<br>Hershey's Chocolate World: 3790 S Las Vegas Blvd (across the street · custom wrappers · baked goods) · open until midnight Sun–Thu<br>Both are on the walk south from Caesars toward Planet Hollywood — MGM Grand / New York-New York area</div>
+          <div class="ev-tags">
+            <span class="tag tag-walk">~12 min walk south from Caesars</span>
+            <span class="tag tag-tip">Free entry · open until midnight</span>
+            <span class="tag tag-walk">On the way back to Planet Hollywood</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe" style="background:#D4537E"></div>
+        <div class="ev-time">~10:15 PM</div>
+        <div class="ev-icon">🛍</div>
+        <div class="ev-body">
+          <div class="ev-title">Sugar Factory · Harmon Corner (next to Planet Hollywood)</div>
+          <div class="ev-sub">Candy store + restaurant + desserts · wild milkshakes and candy cocktails · right next to your hotel · open late · great final stop before the clubs or heading in for the night</div>
+          <div class="ev-tags"><span class="tag tag-hotel">Harmon Corner · steps from Planet Hollywood</span></div>
+        </div>
+      </div>
+
+      <div class="sec-div">After shopping — Wednesday night options · pick your energy level</div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe" style="background:var(--teal)"></div>
+        <div class="ev-time">~10:00 PM</div>
+        <div class="ev-icon" style="color:var(--teal)">🚶</div>
+        <div class="ev-body">
+          <div class="ev-title">Option A — Strip night walk: Caesars → Bellagio → Cosmopolitan<span class="who both">Both</span></div>
+          <div class="ev-sub">You're already at Caesars after dinner · stroll south past the Bellagio fountains (free show every 30 min until midnight) · window shop the Cosmopolitan · end at Planet Hollywood · entire walk ~25 min</div>
+          <div class="ev-tags"><span class="tag tag-walk">Free · ~25 min walk back to hotel</span><span class="tag tag-tip">Best free thing in Vegas at night</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~10:30 PM</div>
+        <div class="ev-icon">🎵</div>
+        <div class="ev-body">
+          <div class="ev-title">Option B — Marquee Nightclub · The Cosmopolitan<span class="who both">Both</span></div>
+          <div class="ev-sub">Open Wednesdays · deep house in The Library room + hip hop in The Boom Box room · 60,000 sq ft · one of the top Strip clubs mid-week · ~5 min walk from Caesars · dress code applies</div>
+          <div class="ev-tags"><span class="tag tag-walk">~5 min walk from Caesars</span><span class="tag tag-show">Open Wed · top-tier DJs</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~10:30 PM</div>
+        <div class="ev-icon">🎉</div>
+        <div class="ev-body">
+          <div class="ev-title">Option C — EBC at Night (Encore Beach Club) · Wynn/Encore<span class="who both">Both</span></div>
+          <div class="ev-sub">One of the best Wednesday clubs in Vegas · 40,000 sq ft outdoor venue · top DJs · feels like the weekend mid-week · ~15 min walk or short rideshare north from Caesars</div>
+          <div class="ev-tags"><span class="tag tag-walk">~15 min walk / rideshare north</span><span class="tag tag-show">Open Wed · packed energy</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-social">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~10:30 PM</div>
+        <div class="ev-icon">🌃</div>
+        <div class="ev-body">
+          <div class="ev-title">Option D — Drai's Beachclub & Nightclub · The Cromwell<span class="who both">Both</span></div>
+          <div class="ev-sub">Rooftop pool + nightclub hybrid · stunning Strip views · hip hop and Top 40 · open Wednesday · 2 min walk from Planet Hollywood on the Strip · easiest club to get back from</div>
+          <div class="ev-tags"><span class="tag tag-walk">~2 min walk from Planet Hollywood</span><span class="tag tag-show">Open Wed</span></div>
+        </div>
+      </div>
+
+      <div class="ev t-focus">
+        <div class="ev-stripe"></div>
+        <div class="ev-time">~10:30 PM</div>
+        <div class="ev-icon">🍹</div>
+        <div class="ev-body">
+          <div class="ev-title">Option E — Caramella Hidden Lounge or Glass Bar · Planet Hollywood<span class="who both">Both</span></div>
+          <div class="ev-sub">Low-key nightlife inside your own hotel · DJ nights · no dress code stress · zero transit · ideal if energy is low after a full conference day + dinner</div>
+          <div class="ev-tags"><span class="tag tag-hotel">Inside Planet Hollywood</span></div>
+        </div>
       </div>
 
     </div>
@@ -427,7 +754,7 @@ footer a{color:var(--teal);text-decoration:none}
   <!-- ══════ JUNE 25 ══════ -->
   <div class="day-block">
     <div class="day-header">
-      <div><div class="day-wd">Thursday · June 25, 2026</div><div class="day-name">Conference Day 2 + RuPaul's Drag Race Live!</div></div>
+      <div><div class="day-wd">Thursday · June 25, 2026</div><div class="day-name">Conference Day 2 + RuPaul + CartZilla Ride</div></div>
       <span class="day-badge b-cs">Conf + show</span>
     </div>
     <div class="timeline">
@@ -466,10 +793,26 @@ footer a{color:var(--teal);text-decoration:none}
         </div>
       </div>
 
-      <div class="ev t-warn">
-        <div class="ev-stripe"></div><div class="ev-time">~11:00 PM</div><div class="ev-icon">⚠</div>
+
+      <div class="ev" style="border-left:3px solid #E8A020;border-radius:0">
+        <div class="ev-stripe" style="background:#E8A020"></div>
+        <div class="ev-time">11:30 PM<span class="seat">Pickup: 3300 S LV Blvd</span></div>
+        <div class="ev-icon" style="color:#FFD080">🛺</div>
         <div class="ev-body">
-          <div class="ev-title">Return to hotel · pack bags tonight — very early flight tomorrow</div>
+          <div class="ev-title" style="color:#FFD080">CartZilla Awesome Ride — Las Vegas Strip<span class="who both">Both</span></div>
+          <div class="ev-sub">Pickup: 3300 S Las Vegas Blvd · next to Treasure Island Hotel · Mystere Dreams Ave · look for the big bus sign with benches · ~15 min walk north from Flamingo or quick rideshare</div>
+          <div class="ev-tags">
+            <span class="tag tag-res">Bryan Olivari + Astrid Fuentes · Adult tickets</span>
+            <span class="tag tag-warn">Arrive early — seating is first come, first served</span>
+            <span class="tag tag-warn">Non-refundable · no late arrivals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev t-warn">
+        <div class="ev-stripe"></div><div class="ev-time">~1:00 AM</div><div class="ev-icon">⚠</div>
+        <div class="ev-body">
+          <div class="ev-title">Return to hotel · pack bags — extremely early flight in a few hours</div>
           <div class="ev-sub">Flight departs 6:50 AM · must be at airport by 5:50 AM · wake up by 4:45 AM</div>
           <div class="ev-tags"><span class="tag tag-warn">Book rideshare tonight for 5:00 AM pickup</span></div>
         </div>
@@ -550,5 +893,638 @@ footer a{color:var(--teal);text-decoration:none}
   </span>
 </footer>
 
-</body>
-</html>
+
+</div>
+
+<!-- TAB 2: WORKSHOP PREP -->
+<div class="tab-panel" id="tab-1">
+<div class="main">
+
+  <div class="tab-header-block">
+    <div class="tab-eyebrow">Adobe Learning Summit 2026</div>
+    <div class="tab-title">Workshop Preparation Guide</div>
+    <div class="tab-sub">Bryan Olivari · Liberty Business B2B Academy · Jun 24–25</div>
+  </div>
+
+  <!-- CONTEXT CARD -->
+  <div class="info-card teal">
+    <div class="info-card-icon">🎯</div>
+    <div>
+      <div class="info-card-title">Your mission at the Summit</div>
+      <div class="info-card-body">You're building the <strong>Liberty Business B2B Academy</strong> — a modular LMS platform for high-turnover D2D / OTM sales channels in Puerto Rico. The Summit is your opportunity to learn directly from Adobe's product teams, validate your tool stack (Captivate + Learning Manager + NotebookLM), and bring back best practices to accelerate the Academy build.</div>
+    </div>
+  </div>
+
+  <!-- DAY 1 SESSIONS -->
+  <div class="ws-day">
+    <div class="ws-day-header">
+      <span class="ws-day-badge">Wed Jun 24</span>
+      <span class="ws-day-name">Conference Day 1 — Key sessions for your work</span>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header red">
+        <div class="ws-session-time">9:00 – 10:00 AM</div>
+        <div class="ws-session-title">[Keynote] Storytelling for business</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>Your D2D training modules need to hook reps fast — they have the highest turnover of any B2B channel. Storytelling frameworks from this keynote can directly shape how you script M02 (Liberty Business Positioning) and M03 (SOHO Segment Deep Dive). Listen for narrative structures you can apply to training content.</p>
+        <div class="ws-take-label">Key questions to bring</div>
+        <ul class="ws-list">
+          <li>How do you make business positioning feel personal to a field rep knocking on doors?</li>
+          <li>What storytelling techniques work best for reluctant learners in high-turnover environments?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header orange">
+        <div class="ws-session-time">10:00 – 11:15 AM</div>
+        <div class="ws-session-title">What's new with Adobe Digital Learning Solutions</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>This is your product roadmap session. You're using <strong>Adobe Captivate</strong> for SCORM/xAPI packages and targeting a Cornerstone/TalentLMS/Moodle LMS. Watch for: new AI-assisted authoring features, any updates to SCORM 1.2 compatibility, and how Learning Manager integrates with other tools.</p>
+        <div class="ws-take-label">Come prepared to ask about</div>
+        <ul class="ws-list">
+          <li>SCORM 1.2 vs xAPI — which does Adobe recommend for 2026 deployments?</li>
+          <li>Can Adobe Learning Manager replace a third-party LMS for our use case?</li>
+          <li>AI content generation inside Captivate — how mature is it for Spanish-language content?</li>
+          <li>Integration between NotebookLM (Google) output and Adobe Captivate workflows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header orange">
+        <div class="ws-session-time">11:45 AM – 12:45 PM</div>
+        <div class="ws-session-title">What's new in Adobe Captivate: building smarter learning experiences</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you — HIGH PRIORITY</div>
+        <p>Adobe Captivate is your primary authoring tool for the B2B Academy. This session is essential. You're building system simulations (VU Console LCPR, B2B Quick Sales App, Enterprise Sales Console) and branching scenarios for M06. Pay close attention to new simulation and screen-recording features.</p>
+        <div class="ws-take-label">Specific things to look for</div>
+        <ul class="ws-list">
+          <li>New AI-assisted slide/scenario generation — can it speed up M06 system simulation build?</li>
+          <li>Branching scenario builder improvements for M08 (Activation, BREs & Returns)</li>
+          <li>Quiz/assessment builder for M11 (Final Certification — ≥85% threshold)</li>
+          <li>Spanish-language support and bilingual content workflows</li>
+          <li>Export to SCORM 1.2 and xAPI — any new options or issues to know?</li>
+        </ul>
+        <div class="ws-note">📋 Note: Take screenshots of any Captivate UI features shown — these will be useful for your Ronald Reaño Krays (Trainer) when building module content.</div>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header gold">
+        <div class="ws-session-time">12:30 – 1:30 PM</div>
+        <div class="ws-session-title">Invite-Only Lunch — Studion (Customer & Partner Learning Leaders)</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Strategic networking opportunity</div>
+        <p>You're in a room of customer and partner learning leaders. Liberty Business is building exactly this — a partner-facing training infrastructure for B2B sales channels. This is the moment to share what you're building and learn how peers solve the same problems.</p>
+        <div class="ws-take-label">Conversation points to have ready</div>
+        <ul class="ws-list">
+          <li>"We're building a modular LMS academy for our D2D and OTM sales reps — 11 modules, Captivate + LMS stack."</li>
+          <li>"Biggest challenge: high turnover means we can never assume baseline knowledge. How do you solve for that?"</li>
+          <li>"We use Google NotebookLM for content generation before authoring in Captivate — any peers doing hybrid AI workflows?"</li>
+          <li>Ask about Studion's services — they specialize in customer & partner training, could be a future vendor partner.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header purple">
+        <div class="ws-session-time">1:45 – 2:15 PM</div>
+        <div class="ws-session-title">Unlock exponential productivity for instructors with AI-first virtual classrooms</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>Your trainers (Ronald) currently run instructor-led sessions that the Academy aims to replace or supplement. AI-first virtual classroom tools could help bridge the gap during the transition — especially for modules like M10 (Field Best Practices) that benefit from live coaching elements.</p>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header purple">
+        <div class="ws-session-time">2:15 – 3:00 PM</div>
+        <div class="ws-session-title">Say it. See it. Publish it — AI in Adobe Learning Manager Content Composer</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you — HIGH PRIORITY</div>
+        <p>Content Composer is the AI authoring tool inside Adobe Learning Manager. If this can replace or complement your NotebookLM → Captivate workflow, it could significantly speed up the Academy build. Evaluate whether it handles the kind of structured, product-knowledge content you need for M04 (Broadband) and M05 (Mobile).</p>
+        <div class="ws-take-label">Evaluate against your workflow</div>
+        <ul class="ws-list">
+          <li>Can you feed it existing Salesforce Knowledge Articles as source material?</li>
+          <li>Does it support Spanish or bilingual output?</li>
+          <li>How does it compare to NotebookLM for generating training scripts?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header purple">
+        <div class="ws-session-time">3:15 – 4:00 PM</div>
+        <div class="ws-session-title">Deliver one-on-one coaching for every learner at scale using AI roleplays</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>D2D reps need to practice objection handling and customer conversations before hitting the field. AI roleplay tools could be a powerful addition to M10 (Field Best Practices) or as a standalone capstone before M11 certification. Look for: how the roleplay scenarios are built, what LMS integration looks like, and whether it works in Spanish.</p>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header teal">
+        <div class="ws-session-time">4:30 – 5:30 PM</div>
+        <div class="ws-session-title">[Workshop] Experience Builder — practice building stunning learning experiences live!</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you — HANDS-ON</div>
+        <p>This is the most actionable session of Day 1. You'll be building in the tool live. Come with a use case ready: consider practicing with a simplified version of your M06 system scenario (order entry walkthrough). This gives you a real artifact to bring back and show the team.</p>
+        <div class="ws-take-label">Come prepared with</div>
+        <ul class="ws-list">
+          <li>A rough outline of one D2D training scenario (e.g., B2B Quick Sales App order flow)</li>
+          <li>3–4 screenshots of the B2B Quick Sales App or VU Console if possible</li>
+          <li>Your laptop charged and Adobe account logged in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 SESSIONS -->
+  <div class="ws-day">
+    <div class="ws-day-header">
+      <span class="ws-day-badge">Thu Jun 25</span>
+      <span class="ws-day-name">Conference Day 2 — Deeper dives + architecture</span>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header red">
+        <div class="ws-session-time">10:30 – 11:30 AM</div>
+        <div class="ws-session-title">You have the idea — now what? Turning concepts into learning experiences with AI and Adobe</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>This is literally where you are right now with the B2B Academy — you have the D2D v5 agenda, you have the tool stack, and you're turning it into actual modules. This session should validate your approach and give you practical next steps for the build phase with Ronald.</p>
+        <div class="ws-take-label">Your concept to bring to this session</div>
+        <ul class="ws-list">
+          <li>11-module D2D SOHO Learning Plan (v5) already designed</li>
+          <li>NotebookLM → Captivate → LMS workflow in progress</li>
+          <li>Challenge: bilingual content (Spanish primary, English secondary)</li>
+          <li>Challenge: high-turnover audience with short attention spans — need modular, bite-sized content</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header orange">
+        <div class="ws-session-time">11:45 AM – 12:30 PM</div>
+        <div class="ws-session-title">Your LMS shouldn't need you — meet the agents that run it for you</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>LMS administration is a real overhead concern for a small team (you + Astrid + Ronald). If AI agents can automate enrollment, notifications, and reporting, that's time back for content development. Ask about: what LMS platforms the agents support, and whether this works with Cornerstone/TalentLMS/Moodle.</p>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header gold">
+        <div class="ws-session-time">1:30 – 2:30 PM</div>
+        <div class="ws-session-title">Taming the chaos! The roadmap to elegant architecture</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you — HIGH PRIORITY</div>
+        <p>You're designing the architecture of an entire learning platform from scratch. This session is directly relevant to how you structure the B2B Academy beyond the D2D plan — you'll eventually need OTM, BSO, SMB, and Enterprise Learning Plans. Listen for: how to design a scalable content taxonomy, versioning strategy for fast-changing product content, and how to manage multiple Learning Plans in one LMS.</p>
+        <div class="ws-take-label">Your architecture questions</div>
+        <ul class="ws-list">
+          <li>How do you handle product catalog updates (rate plans, bundles) without rebuilding entire modules?</li>
+          <li>What's the right structure for multi-channel training (D2D vs OTM vs BSO) in one LMS?</li>
+          <li>How do you version-control SCORM packages that change frequently?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header orange">
+        <div class="ws-session-time">2:45 – 3:30 PM</div>
+        <div class="ws-session-title">How Adobe is transforming end-to-end learning from creation to delivery with AI</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Why it matters to you</div>
+        <p>End-to-end view of the Adobe stack — from content creation to delivery to reporting. Use this to finalize your tool decisions: should you go all-in on Adobe Learning Manager as your LMS, or keep a third-party LMS and just use Captivate for authoring? This session should help you answer that question with confidence.</p>
+      </div>
+    </div>
+
+    <div class="ws-session">
+      <div class="ws-session-header purple">
+        <div class="ws-session-time">4:00 – 4:45 PM</div>
+        <div class="ws-session-title">Say it. See it. Publish it — Content Composer (repeat)</div>
+      </div>
+      <div class="ws-session-body">
+        <div class="ws-focus-label">Second chance if you missed Day 1 or want to go deeper</div>
+        <p>If you couldn't fully evaluate Content Composer during Day 1, use this repeat session to test it with specific Liberty Business content — e.g., paste in a Salesforce Knowledge Article about the B2B Quick Sales App and see what it generates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAKEAWAYS CARD -->
+  <div class="info-card gold" style="margin-top:2rem">
+    <div class="info-card-icon">📦</div>
+    <div>
+      <div class="info-card-title">What to bring back to the team</div>
+      <div class="info-card-body">
+        <strong>For Ronald (Trainer):</strong> Captivate feature updates, simulation-building techniques from the workshop, any new AI-authoring shortcuts.<br><br>
+        <strong>For Astrid (Supervisor):</strong> Architecture decisions (LMS platform, content taxonomy, versioning strategy), AI agent features for LMS admin overhead.<br><br>
+        <strong>For the Academy build:</strong> Concrete answer on NotebookLM → Captivate → LMS workflow vs. going all-in on Adobe Learning Manager. Decision on SCORM 1.2 vs xAPI for 2026 deployments.
+      </div>
+    </div>
+  </div>
+
+  <!-- D2D MODULE REFERENCE -->
+  <div class="ws-day" style="margin-top:2rem">
+    <div class="ws-day-header">
+      <span class="ws-day-badge" style="background:var(--teal-dim);color:#40D4B8;border-color:var(--teal-border)">Reference</span>
+      <span class="ws-day-name">D2D SOHO Learning Plan v5 — 11-Module Agenda</span>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="ws-table">
+      <thead>
+        <tr><th>#</th><th>Module</th><th>Duration</th><th>Platform</th><th>Priority for Summit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>M01</td><td>Welcome & LMS Orientation</td><td>30 min</td><td>Pre-LMS / offline</td><td><span class="ws-pri med">Medium</span></td></tr>
+        <tr><td>M02</td><td>Liberty Business Positioning</td><td>60 min</td><td>LMS (shared)</td><td><span class="ws-pri high">High — Keynote storytelling</span></td></tr>
+        <tr><td>M03</td><td>SOHO Segment Deep Dive</td><td>30 min</td><td>LMS</td><td><span class="ws-pri med">Medium</span></td></tr>
+        <tr><td>M04</td><td>Broadband Product Catalog (COAX/Fiber, Plum Pod)</td><td>45 min</td><td>LMS</td><td><span class="ws-pri high">High — Content Composer test</span></td></tr>
+        <tr><td>M05</td><td>Mobile Product Catalog (4G/5G, plan comparisons)</td><td>45 min</td><td>LMS</td><td><span class="ws-pri high">High — Content Composer test</span></td></tr>
+        <tr><td>M06</td><td>Salesforce & Order Entry — 3 System Scenarios</td><td>60 min</td><td>Captivate sim</td><td><span class="ws-pri crit">Critical — Workshop use case</span></td></tr>
+        <tr><td>M07</td><td>Salesforce & Order Entry — Strategy & VAS</td><td>30 min</td><td>Captivate sim</td><td><span class="ws-pri high">High — Captivate session</span></td></tr>
+        <tr><td>M08</td><td>Activation, BREs & Returns (mobile only)</td><td>45 min</td><td>LMS + branching</td><td><span class="ws-pri high">High — AI roleplay session</span></td></tr>
+        <tr><td>M09</td><td>Leveraging Current Customers</td><td>30 min</td><td>LMS</td><td><span class="ws-pri low">Low</span></td></tr>
+        <tr><td>M10</td><td>Field Best Practices</td><td>20 min</td><td>LMS</td><td><span class="ws-pri high">High — AI roleplay / coaching</span></td></tr>
+        <tr><td>M11</td><td>Final Certification Exam (≥85%)</td><td>20 min</td><td>LMS assessed</td><td><span class="ws-pri high">High — Quiz builder session</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- TAB 3: OUTFIT GUIDE -->
+<div class="tab-panel" id="tab-2">
+<div class="main">
+
+  <div class="tab-header-block">
+    <div class="tab-eyebrow">Las Vegas · June 23–26 · 100°F+</div>
+    <div class="tab-title">Outfit Preparation Guide</div>
+    <div class="tab-sub">Bryan Olivari (M) · Astrid Fuentes (F) · Business casual for workshops · Comfortable for evenings</div>
+  </div>
+
+  <div class="info-card red">
+    <div class="info-card-icon">🌡</div>
+    <div>
+      <div class="info-card-title">Weather context — Las Vegas late June</div>
+      <div class="info-card-body">Expect <strong>100–110°F (38–43°C)</strong> outdoors with low humidity. The Bellagio and Planet Hollywood are heavily air-conditioned (sometimes cold inside). Strategy: dress for the AC indoors, bring a light layer for conference rooms, and wear breathable fabrics when walking the Strip between venues.</div>
+    </div>
+  </div>
+
+  <!-- BRYAN -->
+  <div class="outfit-section">
+    <div class="outfit-who-header bryan-header">
+      <div class="outfit-avatar">BO</div>
+      <div>
+        <div class="outfit-who-name">Bryan Olivari</div>
+        <div class="outfit-who-role">CX Manager · Knowledge & Training</div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label travel">Tuesday Jun 23 — Travel day</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👕</div>
+          <div>
+            <div class="outfit-piece">Fitted crew-neck or polo shirt</div>
+            <div class="outfit-detail">Light color · breathable cotton or moisture-wick blend · comfortable for 12+ hrs of travel</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">🩳</div>
+          <div>
+            <div class="outfit-piece">Cargo shorts or slim chinos</div>
+            <div class="outfit-detail">Multiple pockets are your best friend on travel days · boarding pass, phone, wallet all accessible</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Clean white sneakers or low-profile runners</div>
+            <div class="outfit-detail">You'll be walking airports and checking into the hotel — comfort first</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">🧢</div>
+          <div>
+            <div class="outfit-piece">Baseball cap or snapback (optional)</div>
+            <div class="outfit-detail">Las Vegas sun hits hard when you step off the airport shuttle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label conf">Wednesday Jun 24 — Conference Day 1 + Gordon Ramsay dinner</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👔</div>
+          <div>
+            <div class="outfit-piece">Suit — light navy or charcoal gray</div>
+            <div class="outfit-detail">Slim or modern fit · linen-blend or tropical wool preferred for the heat · you'll be inside AC all day</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👕</div>
+          <div>
+            <div class="outfit-piece">Crisp dress shirt — white or pale blue</div>
+            <div class="outfit-detail">No tie needed for conference · open collar is fine and keeps it modern · button-down preferred</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👞</div>
+          <div>
+            <div class="outfit-piece">Clean leather or suede dress shoes</div>
+            <div class="outfit-detail">You'll walk ~8 min to Bellagio in the morning and the same route to Caesars for dinner — pack insoles</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">⌚</div>
+          <div>
+            <div class="outfit-piece">Watch + minimal accessories</div>
+            <div class="outfit-detail">Belt matching shoes · keep it clean and professional for the Studion invite-only lunch</div>
+          </div>
+        </div>
+        <div class="outfit-item tip">
+          <div class="outfit-emoji">💡</div>
+          <div class="outfit-detail"><strong>Tip:</strong> Gordon Ramsay Hell's Kitchen is smart casual — your conference suit works perfectly. No need to change between the workshop and dinner.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label conf">Thursday Jun 25 — Conference Day 2 + RuPaul + CartZilla</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👔</div>
+          <div>
+            <div class="outfit-piece">Second suit — medium gray or navy alternative</div>
+            <div class="outfit-detail">Rotate from Wednesday · same level of polish for the keynotes and sessions</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👕</div>
+          <div>
+            <div class="outfit-piece">Dress shirt — light gray or soft pattern</div>
+            <div class="outfit-detail">Subtle check or micro-stripe keeps it visual without being loud</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">🎽</div>
+          <div>
+            <div class="outfit-piece">After 4:45 PM → change into casual for the evening</div>
+            <div class="outfit-detail">Cargo pants (dark olive or black) + clean fitted tee or open-button short sleeve shirt — comfortable for dinner, RuPaul, and CartZilla ride at 11:30 PM</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Sneakers for the evening out</div>
+            <div class="outfit-detail">You'll be walking to Flamingo (~5 min) and riding CartZilla on the Strip at midnight — comfort is essential</div>
+          </div>
+        </div>
+        <div class="outfit-item tip">
+          <div class="outfit-emoji">💡</div>
+          <div class="outfit-detail"><strong>Tip:</strong> Pack your evening clothes in your hotel room before leaving for sessions so you can change quickly after the conference ends at 4:45 PM.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label travel">Friday Jun 26 — Return travel (4:45 AM wake-up)</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">🩳</div>
+          <div>
+            <div class="outfit-piece">Cargo pants or comfortable joggers</div>
+            <div class="outfit-detail">Easy to move through airport security · you're up at 4:45 AM — comfort first</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👕</div>
+          <div>
+            <div class="outfit-piece">Soft tee or casual polo</div>
+            <div class="outfit-detail">Something you can sleep in on the plane if needed</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Slip-on sneakers</div>
+            <div class="outfit-detail">Easy TSA security — no laces at 5 AM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKING LIST BRYAN -->
+    <div class="packing-list">
+      <div class="packing-title">Bryan's packing checklist</div>
+      <div class="packing-grid">
+        <div class="packing-item"><span>✅</span> 2 suits (navy + gray)</div>
+        <div class="packing-item"><span>✅</span> 2 dress shirts (white + light)</div>
+        <div class="packing-item"><span>✅</span> 2 casual shirts / tees (evening)</div>
+        <div class="packing-item"><span>✅</span> 1 cargo pants (dark olive or black)</div>
+        <div class="packing-item"><span>✅</span> 1 travel shorts / chinos</div>
+        <div class="packing-item"><span>✅</span> 2 pairs dress shoes + sneakers</div>
+        <div class="packing-item"><span>✅</span> 4 changes of underwear + socks</div>
+        <div class="packing-item"><span>✅</span> Belt (matching dress shoes)</div>
+        <div class="packing-item"><span>✅</span> Watch + accessories</div>
+        <div class="packing-item"><span>✅</span> Laptop + charger + notebook</div>
+        <div class="packing-item"><span>✅</span> Adobe account credentials saved</div>
+        <div class="packing-item"><span>✅</span> Carry-on only (no checked bag)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASTRID -->
+  <div class="outfit-section">
+    <div class="outfit-who-header astrid-header">
+      <div class="outfit-avatar astrid">AF</div>
+      <div>
+        <div class="outfit-who-name">Astrid Fuentes</div>
+        <div class="outfit-who-role">Supervisor · Knowledge & Training</div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label travel">Tuesday Jun 23 — Travel day</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👗</div>
+          <div>
+            <div class="outfit-piece">Casual maxi dress or wide-leg pants + top</div>
+            <div class="outfit-detail">Breathable fabric · easy movement for airports · looks put together without effort</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Comfortable flat sneakers or slip-ons</div>
+            <div class="outfit-detail">Long travel day — avoid heels entirely</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">🧣</div>
+          <div>
+            <div class="outfit-piece">Light cardigan or denim jacket</div>
+            <div class="outfit-detail">Plane cabins and airport terminals are cold — layer up and remove when outside</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label conf">Wednesday Jun 24 — Conference Day 1 + Studion lunch + Gordon Ramsay</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👔</div>
+          <div>
+            <div class="outfit-piece">Tailored blazer suit — light beige, cream, or soft gray</div>
+            <div class="outfit-detail">Linen or lightweight blend · professional and polished for the invite-only Studion lunch · pants or skirt suit both work</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👚</div>
+          <div>
+            <div class="outfit-piece">Blouse — silk or satin finish, neutral or soft color</div>
+            <div class="outfit-detail">Tucked in under the blazer · elevates the look for networking reception later</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👠</div>
+          <div>
+            <div class="outfit-piece">Block-heel or low-heel shoes (comfortable)</div>
+            <div class="outfit-detail">You'll walk ~8 min to the Bellagio and later to Caesars — avoid stilettos for an all-day wear</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">💍</div>
+          <div>
+            <div class="outfit-piece">Minimal jewelry — stud earrings + watch or bracelet</div>
+            <div class="outfit-detail">Professional conference setting + upscale dinner — less is more</div>
+          </div>
+        </div>
+        <div class="outfit-item tip">
+          <div class="outfit-emoji">💡</div>
+          <div class="outfit-detail"><strong>Tip:</strong> The suit works from 7:30 AM breakfast through the Studion lunch and Gordon Ramsay dinner at 8 PM. No outfit change needed all day.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label conf">Thursday Jun 25 — Conference Day 2 + RuPaul + CartZilla</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👔</div>
+          <div>
+            <div class="outfit-piece">Second suit — navy, dusty rose, or forest green blazer set</div>
+            <div class="outfit-detail">Rotate from Wednesday · a pop of color is great for Day 2 confidence</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👚</div>
+          <div>
+            <div class="outfit-piece">Clean fitted top in a complementary tone</div>
+            <div class="outfit-detail">Keeps the suit fresh and not repetitive</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👗</div>
+          <div>
+            <div class="outfit-piece">After 4:45 PM → change into: dark jeans + cute top or crop jacket</div>
+            <div class="outfit-detail">Las Vegas Strip evenings are perfect for jeans — high-waist dark denim, a fun top, and a light jacket for the AC at Flamingo and outdoors on CartZilla at midnight</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Comfortable but cute sneakers or block sandals</div>
+            <div class="outfit-detail">Flamingo showroom, Strip walking, and CartZilla ride — heels are not recommended for the evening</div>
+          </div>
+        </div>
+        <div class="outfit-item tip">
+          <div class="outfit-emoji">💡</div>
+          <div class="outfit-detail"><strong>Tip:</strong> RuPaul's audience loves a look — feel free to add a fun accessory or bold lip for the evening out. The CartZilla ride is outdoors at night so pack a small jacket or wrap.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outfit-day">
+      <div class="outfit-day-label travel">Friday Jun 26 — Return travel (4:45 AM wake-up)</div>
+      <div class="outfit-items">
+        <div class="outfit-item">
+          <div class="outfit-emoji">👖</div>
+          <div>
+            <div class="outfit-piece">Dark jeans or comfortable stretch pants</div>
+            <div class="outfit-detail">Easy and put-together — you'll look fine even at 5 AM</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👚</div>
+          <div>
+            <div class="outfit-piece">Soft tee + light cardigan or jacket</div>
+            <div class="outfit-detail">Planes are cold · layering is key for the long return trip</div>
+          </div>
+        </div>
+        <div class="outfit-item">
+          <div class="outfit-emoji">👟</div>
+          <div>
+            <div class="outfit-piece">Slip-on sneakers or flats</div>
+            <div class="outfit-detail">TSA security at 5:30 AM — slip-ons win every time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PACKING LIST ASTRID -->
+    <div class="packing-list">
+      <div class="packing-title">Astrid's packing checklist</div>
+      <div class="packing-grid">
+        <div class="packing-item"><span>✅</span> 2 suits (neutral + color)</div>
+        <div class="packing-item"><span>✅</span> 2 blouses / tops (for suits)</div>
+        <div class="packing-item"><span>✅</span> Dark jeans (evening + travel)</div>
+        <div class="packing-item"><span>✅</span> 1–2 casual tops for evening</div>
+        <div class="packing-item"><span>✅</span> Light cardigan or crop jacket</div>
+        <div class="packing-item"><span>✅</span> Block heels + comfortable sneakers</div>
+        <div class="packing-item"><span>✅</span> Travel day shoes (slip-ons)</div>
+        <div class="packing-item"><span>✅</span> Accessories (earrings, bracelet)</div>
+        <div class="packing-item"><span>✅</span> 4 changes underwear + socks</div>
+        <div class="packing-item"><span>✅</span> Travel skincare (100°F+ heat)</div>
+        <div class="packing-item"><span>✅</span> Small evening bag / clutch</div>
+        <div class="packing-item"><span>✅</span> Light jacket for CartZilla night</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function switchTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  document.querySelectorAll('.tab-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+  window.scrollTo({top: document.getElementById('tab-nav').offsetTop - 8, behavior: 'smooth'});
+}
+</script>
+
+</body></html>
